@@ -1,0 +1,41 @@
+{
+  "section": "03 - Essentials: Quantitative Analysis",
+  "title": "Overall assessment",
+  "subtitle": "Effective Supervisory Board work",
+  "introPart1": "The questions asked of the Supervisory Board and committee members were analyzed ",
+  "introBold": "using two dimensions:",
+  "dimensions": [
+    "The average rating.",
+    "The consensus of the respective question."
+  ],
+  "note": "The survey among all Supervisory Board members illustrates the following results:",
+ "averageRating": {
+  "heading": "Average Rating¹",
+  "description": "Measurement of the average rating of all Supervisory Board members",
+  "scale": {
+    "1": "Disagree",
+    "3": "Neutral",
+    "5": "Agree"
+  },
+  "value": 4.2,
+  "analysis": 
+    "The average rating across all questions that were answered by the Supervisory Board is",
+  "analysis1":"In a ",
+  "analysis2":"benchmark comparison with other companies from the DAX index family",
+  "analysis3":"this value is average."
+},
+"averageConsensus": {
+  "heading": "Average consensus",
+  "description": "Measurement of the consensus of judgement between individual Supervisory Board members",
+  "value": 72,
+  "analysis": 
+    "The average Consensus, meaning how much the Supervisory Board agrees on the posed questions, is",
+   "analysis1":"In a ",
+  "analysis2":"benchmark comparison with other companies from the DAX index family",
+  "analysis3":"this value is slightly below average."
+},
+
+  "footnote": "0 = Strongly disagree | 100 = Strongly agree",
+  "source": "Evaluation of the Supervisory Board of TUI AG | Results report",
+  "footer": "ECBE"
+}

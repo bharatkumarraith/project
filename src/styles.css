@@ -1,0 +1,202 @@
+/* You can add global styles to this file, and also import other style files */
+/* h1{
+    background-color: rgb(6, 6, 121);
+    font-size: 2em;
+    color: white;
+} */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Serif', serif;
+}
+.logo{
+  width: 20px;
+  height: 20px;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.intro{
+  font-weight: 100;
+  font-size: 8px;
+}
+.title{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.main-content{
+    display: flex;
+    padding: 30px;
+    gap: 37px;
+}
+.sentiment-labels {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.average-rating-heading{
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    background-color: #eaeaea;
+    margin-top: 50px;
+}
+
+.analysis2{
+    color: deepskyblue;
+    font-weight: bold;
+}
+.sub-content1{
+  border-right: 1px solid black;
+  padding: 10px;
+}
+
+.analysis1{
+  color: black;
+  font-weight: bold;
+}
+
+.average-heading{
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.analysis3{
+  color: black;
+  font-weight: bold;
+}
+.slider-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.slider-content {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+
+.header{
+  background-color: #003f63;
+  padding: 20px;
+  color: white;
+
+
+}
+
+.nav-button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #003f63;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.nav-button:hover {
+  background-color: #003f63;
+  transform: scale(1.05);
+}
+
+.nav-button.left::before {
+  content: "← ";
+}
+
+.nav-button.right::after {
+  content: " →";
+}
+
+.main-header{
+  box-shadow: rgba(0, 0, 0, 95.16) 0px 1px 4px
+}
+.main-footer{
+  box-shadow: rgba(0, 0, 0, 95.16) 0px 1px 4px;
+}
+.footer-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content{
+  background-color: #003f63;
+  padding: 12px;
+  color: white;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.heading-bold{
+  font-weight: bold;
+}
+
+/* home.component.css */
+/* canvas {
+  max-width: 100%;
+} */
+
+
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+    gap: 0px;
+  }
+  .sub-content1{
+    border-right: none;
+    padding: 0px;
+  }
+  .average-rating-heading{
+    padding: 10px;
+  }
+  .header{
+    padding: 5px;
+  }
+  .footer-header{
+    display: block;
+    justify-content: space-between;
+  }
+  
+}
+@media screen and (max-width: 480px) {
+  .content{
+    padding: 10px;
+  }
+  .main-content {
+    flex-direction: column;
+    padding: 5px;
+    gap: 0px;
+  }
+  .sub-content1{
+    border-right: none;
+    padding: 0px;
+  }
+  .average-rating-heading{
+    padding: 5px;
+  }
+  .header{
+    padding: 5px;
+  }
+  .footer-header{
+    display: block;
+    justify-content: space-between;
+  }
+}

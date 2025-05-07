@@ -1,0 +1,16 @@
+[
+
+ {
+    "name": "Average rating",
+    "series": [
+      {
+        "name": "average Rating",
+        "value": 45
+      },
+      {
+        "name": "remaining Rating",
+        "value": 20
+      }
+    ]
+  }
+]
