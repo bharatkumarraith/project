@@ -1,121 +1,133 @@
 <app-header></app-header>
 <!-- page-1 -->
-<div id="page-1" *ngIf="showPage1" style="max-height: fit-content;">
-    <div class="content" style="overflow-x: auto; white-space: nowrap;">
-        <h5 class="intro">{{ boardData.section }}</h5>
-        <h1 class="title">{{ boardData.title }}</h1>
-        <h2 class="subtitle">{{ boardData.subtitle }}</h2>
-    </div>
-    <div class="main-content">
-        <div class="sub-content1">
-            <p>
-                {{ boardData.introPart1 }}
-                <strong>{{ boardData.introBold }}</strong>
-            </p>
-            <div>
-                <p *ngFor="let item of boardData.dimensions">- {{ item }}</p>
-            </div>
-            <p>{{ boardData.note }}</p>
-            <div style="margin-top: 250px; font-size: 10px;">
-                <p>{{ boardData.footnote }}</p>
-            </div>
-            <div style="font-size: 10px;">
-                <p>{{ boardData.source }}</p>
-            </div>
+<div class="full-container">
+    <div id="page-1" *ngIf="showPage1" >
+        <div class="content" style="overflow-x: auto; white-space: nowrap;">
+            <h5 class="intro">{{ boardData.section }}</h5>
+            <h1 class="title">{{ boardData.title }}</h1>
+            <h2 class="subtitle">{{ boardData.subtitle }}</h2>
         </div>
-        <div class="sub-content2">
-            <div>
-                <h4 class="average-heading">{{ boardData.averageRating.heading }}</h4>
-                <p>{{ boardData.averageRating.description }}</p>
-                <div style="margin-top: 50px; margin-bottom: 30px;">
-                    <ngx-charts-bar-horizontal-normalized [view]="view" [scheme]="colorScheme" [results]="multi"
-                        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis">
-                    </ngx-charts-bar-horizontal-normalized>
-                    <!-- Vertical Line Indicator -->
-                    <!-- <div class="average-line" [ngStyle]="getIndicatorStyle(4.2)">
+        <div class="main-content">
+            <div class="sub-content1">
+                <p>
+                    {{ boardData.introPart1 }}
+                    <strong>{{ boardData.introBold }}</strong>
+                </p>
+                <div>
+                    <p *ngFor="let item of boardData.dimensions">- {{ item }}</p>
+                </div>
+                <p>{{ boardData.note }}</p>
+                <div class="footer">
+                    <p>{{ boardData.footnote }}</p>
+                </div>
+                <div style="font-size: 10px;">
+                    <p>{{ boardData.source }}</p>
+                </div>
+            </div>
+            <div class="sub-content2">
+                <div>
+                    <h4 class="average-heading">{{ boardData.averageRating.heading }}</h4>
+                    <p>{{ boardData.averageRating.description }}</p>
+                    <div style="margin-top: 50px; margin-bottom: 30px;">
+                        <ngx-charts-bar-horizontal-normalized [view]="[600,200]" [scheme]="colorScheme" [results]="multi"
+                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis">
+                        </ngx-charts-bar-horizontal-normalized>
+                        <!-- Vertical Line Indicator -->
+                        <!-- <div class="average-line" [ngStyle]="getIndicatorStyle(4.2)">
                     <div class="line"></div>
                 </div> -->
-                    <!-- Sentiment Labels -->
-                    <div class="sentiment-labels">
-                        <span>Disagree</span>
-                        <span>Neutral</span>
-                        <span>Agree</span>
+                        <!-- Sentiment Labels -->
+                        <div class="sentiment-labels">
+                            <span>Disagree</span>
+                            <span>Neutral</span>
+                            <span>Agree</span>
+                        </div>
+                    </div>
+                    <div class="average-rating-heading">
+                        <p>- {{ boardData.averageRating.analysis }} {{averageRating}}%.</p>
+                        <p>
+                            - <span class="analysis1">{{boardData.averageRating.analysis1}}</span><span
+                                class="analysis2">{{boardData.averageRating.analysis2}} {{averageRating}}%.</span> <span
+                                class="analysis3">{{boardData.averageRating.analysis3}}</span>
+                        </p>
                     </div>
                 </div>
+            </div>
+
+            <div class="sub-content3">
+
+                <h4 class="average-heading">{{ boardData.averageConsensus.heading }}</h4>
+                <p>{{ boardData.averageConsensus.description }}</p>
+                <div style="margin-top: 50px;margin-bottom: 30px; display: flex;justify-content: center;">
+                    <ngx-charts-pie-chart
+                    [view]="[200, 200]" 
+                    [scheme]="colorScheme1"
+                    [results]="pieChartData"
+                    [doughnut]="true"
+                    [labels]="false"
+                    [legend]="false"
+                    [animations]="true"
+                    [tooltipDisabled]="false">
+                  </ngx-charts-pie-chart>
+                  
+
+                </div>
                 <div class="average-rating-heading">
-                    <p>- {{ boardData.averageRating.analysis }} {{averageRating}}%.</p>
+                    <p>- {{ boardData.averageConsensus.analysis }} {{averageConsensus}}%.</p>
                     <p>
-                        - <span class="analysis1">{{boardData.averageRating.analysis1}}</span><span
-                            class="analysis2">{{boardData.averageRating.analysis2}} {{averageRating}}%.</span> <span
-                            class="analysis3">{{boardData.averageRating.analysis3}}</span>
+                        - <span class="analysis1">{{boardData.averageConsensus.analysis1}}</span><span
+                            class="analysis2">{{boardData.averageConsensus.analysis2}}
+                            {{averageConsensus}}%.</span><span
+                            class="analysis3">{{boardData.averageConsensus.analysis3}}</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- page-4 -->
+    <div id="page-4" *ngIf="showPage4">
+        <div class="content">
+            <h5 class="intro">{{ boardData1.section }}</h5>
+            <h1 class="title">{{ boardData1.title }}</h1>
+        </div>
+        <div class="main-content">
+            <div class="sub-content2">
+                <div>
+                    <h4 class="average-heading">{{ boardData1.commentByMembers }}</h4>
+                    <p class="heading-bold">{{ boardData1.NumberAndDurationOfMeetings }}</p>
+                </div>
+                <div>
+                    <p *ngFor="let item of boardData1.commentsByMembers.NumberAndDurationOfMeetings">- {{ item }}</p>
+                </div>
+                <div>
+                    <p class="heading-bold">{{ boardData1.meetingFormatsAndSupportFromBoardOffice }}</p>
+                    <p *ngFor="let item of boardData1.commentsByMembers.MeetingFormatsAndSupportFromBoardOffice">- {{
+                        item
+                        }}
+                    </p>
+                </div>
+                <div>
+                    <p class="heading-bold">{{ boardData1.distributionOfAgendaItems }}</p>
+                    <p *ngFor="let item of boardData1.commentsByMembers.DistributionOfAgendaItems">- {{ item }}</p>
+                </div>
+
+                <div>
+                    <p class="heading-bold">{{ boardData1.divisionBetweenPresentationsAndDiscussions }}</p>
+                    <p *ngFor="let item of boardData1.commentsByMembers.DivisionBetweenPresentationsAndDiscussions">- {{
+                        item }}
                     </p>
                 </div>
             </div>
         </div>
-
-        <div class="sub-content3">
-
-            <h4 class="average-heading">{{ boardData.averageConsensus.heading }}</h4>
-            <p>{{ boardData.averageConsensus.description }}</p>
-            <div style="margin-top: 50px;margin-bottom: 30px;">
-                <ngx-charts-advanced-pie-chart [view]="view" [scheme]="colorScheme1" [results]="pieChartData"
-                    [gradient]="gradient">
-                </ngx-charts-advanced-pie-chart>
-
-            </div>
-            <div class="average-rating-heading">
-                <p>- {{ boardData.averageConsensus.analysis }} {{averageConsensus}}%.</p>
-                <p>
-                    - <span class="analysis1">{{boardData.averageConsensus.analysis1}}</span><span
-                        class="analysis2">{{boardData.averageConsensus.analysis2}} {{averageConsensus}}%.</span><span
-                        class="analysis3">{{boardData.averageConsensus.analysis3}}</span>
-                </p>
-            </div>
-
-        </div>
     </div>
-
-</div>
-
-
-<!-- page-4 -->
-<div id="page-4" *ngIf="showPage4">
-    <div class="content">
-        <h5 class="intro">{{ boardData1.section }}</h5>
-        <h1 class="title">{{ boardData1.title }}</h1>
+    <div style="display: flex;justify-content: center;">
+        <button class="nav-button left" (click)="scrollTo('page-1')">← First Page</button>
+        <button class="nav-button right" (click)="scrollTo('page-4')">Next Page →</button>
     </div>
-    <div class="main-content">
-        <div class="sub-content2">
-            <div>
-                <h4 class="average-heading">{{ boardData1.commentByMembers }}</h4>
-                <p class="heading-bold">{{ boardData1.NumberAndDurationOfMeetings }}</p>
-            </div>
-            <div>
-                <p *ngFor="let item of boardData1.commentsByMembers.NumberAndDurationOfMeetings">- {{ item }}</p>
-            </div>
-            <div>
-                <p class="heading-bold">{{ boardData1.meetingFormatsAndSupportFromBoardOffice }}</p>
-                <p *ngFor="let item of boardData1.commentsByMembers.MeetingFormatsAndSupportFromBoardOffice">- {{ item
-                    }}
-                </p>
-            </div>
-            <div>
-                <p class="heading-bold">{{ boardData1.distributionOfAgendaItems }}</p>
-                <p *ngFor="let item of boardData1.commentsByMembers.DistributionOfAgendaItems">- {{ item }}</p>
-            </div>
-
-            <div>
-                <p class="heading-bold">{{ boardData1.divisionBetweenPresentationsAndDiscussions }}</p>
-                <p *ngFor="let item of boardData1.commentsByMembers.DivisionBetweenPresentationsAndDiscussions">- {{
-                    item }}
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div style="display: flex;justify-content: center;">
-    <button class="nav-button left" (click)="scrollTo('page-1')">← First Page</button>
-    <button class="nav-button right" (click)="scrollTo('page-4')">Next Page →</button>
 </div>
 
 <app-footer></app-footer>

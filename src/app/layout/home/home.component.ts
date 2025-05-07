@@ -17,7 +17,6 @@ import pieChartData from '../../json/pieChartData.json';
 export class HomeComponent implements OnInit {
   boardData: any;
   boardData1: any;
-  isBrowser: boolean;
   showPage4: boolean = false;
   showPage1: boolean = true;
   averageRatingPercent: number = 0;
@@ -28,7 +27,6 @@ export class HomeComponent implements OnInit {
   // view: [number, number] = [window.innerWidth, 600];
   // view: [number, number] = [500, 100];  
   // view1: [number, number] = [500, 100]; 
-  view: [number, number] = [window.innerWidth, 100];
   customColors = [
     {
       name: 'Average Score',
@@ -61,12 +59,12 @@ export class HomeComponent implements OnInit {
   //   domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   // };
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId); // Check if running in the browser
+  constructor() {
+
 
   }
   ngOnInit() {
-    if (this.isBrowser) {
+  
       this.boardData = data;
       this.boardData1 = data1;
       const series = data2[0].series;
@@ -78,18 +76,10 @@ export class HomeComponent implements OnInit {
       const highest = pieChartData.reduce((max, item) => item.value > max.value ? item : max);
       const roundedPercentage = Math.round((highest.value / total1) * 100);
       this.averageConsensus = roundedPercentage;
-      this.updateChartSize();
-      window.addEventListener('resize', this.updateChartSize.bind(this));
-    }
+    
 
   }
 
-  updateChartSize() {
-    if (this.isBrowser) {
-      const width = Math.max(window.innerWidth * 0.3, 300);
-      this.view = [width, 100];
-    }
-  }
   percentCalculate(value: number): string {
     return `${Math.round((value / 5) * 100)}%`;
   }
